@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "ScraperX AutoFill",
+  "version": "0.1.0",
+  "description": "AI-assisted clipboard mapping and autofill for RTS.",
+  "permissions": ["scripting", "activeTab", "clipboardRead"],
+  "host_permissions": [
+    "https://rts.pitchbook.com/*",
+    "https://billowing-smoke-7577.abhishektawte20.workers.dev/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://rts.pitchbook.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "trigger-autofill": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      },
+      "description": "Trigger ScraperX AutoFill"
+    }
+  }
+}
