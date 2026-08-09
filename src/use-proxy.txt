@@ -1,0 +1,2 @@
+﻿// In App.js, change the axios call to use localhost:3001 instead
+const WORKER_URL = 'http://localhost:3001';
